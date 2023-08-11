@@ -1,0 +1,29 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
+module.exports = {
+  purge: {
+    content: [
+      "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+      "./storage/framework/views/*.php",
+      "./resources/views/**/*.blade.php",
+      "./resources/**/*.js",
+      "./resources/**/*.vue",
+    ],
+    options: {
+      whitelist: ['flowbite'], // If you're using flowbite classes in your HTML templates
+    },
+  },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
+  plugins: [
+    // If you are using Flowbite as a plugin, add it here.
+    // Example: require("flowbite/plugin"),
+  ],
+};
+
+
